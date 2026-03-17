@@ -680,3 +680,32 @@ body:has(button:hover) .cursor { width: 52px; height: 52px; border-color: var(--
   .hero-bigname { font-size:44px; }
   .stat-divider { display:none; }
 }
+
+/* ---- PREVENT HORIZONTAL SCROLL ---- */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+* {
+  max-width: 100%;
+}
+
+/* ---- PREVENT HORIZONTAL SCROLL ON MOBILE ---- */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.hero, .section, .marquee-wrap, .footer {
+  overflow-x: hidden;
+}
+
+.work-grid-sq, .work-grid-pt, .work-grid-tk {
+  min-width: 0;
+}
+
+.work-item, .work-item-pt, .work-item-tk {
+  min-width: 0;
+  overflow: hidden;
+}
