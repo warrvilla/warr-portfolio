@@ -709,3 +709,14 @@ html, body {
   min-width: 0;
   overflow: hidden;
 }
+
+/* ---- MOBILE SCROLL FIX ---- */
+html {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: none;
+}
