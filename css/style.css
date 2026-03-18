@@ -159,7 +159,7 @@ body:has(button:hover) .cursor { width: 52px; height: 52px; border-color: var(--
 .hero {
   min-height: 100vh; position: relative;
   display: flex; align-items: center; justify-content: center;
-  padding: 120px 48px 80px; overflow: hidden;
+  padding: 120px 48px 80px; overflow-x: hidden;
 }
 .hero-glow {
   position: absolute; border-radius: 50%; pointer-events: none;
@@ -224,7 +224,7 @@ body:has(button:hover) .cursor { width: 52px; height: 52px; border-color: var(--
 .marquee-wrap {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  overflow: hidden; padding: 18px 0;
+  overflow-x: hidden; padding: 18px 0;
   background: var(--bg2);
 }
 .marquee-track {
@@ -269,7 +269,7 @@ body:has(button:hover) .cursor { width: 52px; height: 52px; border-color: var(--
 .work-item, .work-item-pt { position: relative; cursor: none; }
 
 .work-img-wrap {
-  position: relative; overflow: hidden;
+  position: relative; overflow-x: hidden;
   border-radius: var(--radius);
   background: var(--bg3);
   border: 1px solid var(--border);
@@ -469,7 +469,7 @@ body:has(button:hover) .cursor { width: 52px; height: 52px; border-color: var(--
 /* ---- FOOTER ---- */
 .footer {
   background: #060606; border-top: 1px solid var(--border);
-  position: relative; overflow: hidden;
+  position: relative; overflow-x: hidden;
 }
 .footer-inner {
   display: flex; justify-content: space-between; align-items: flex-start;
@@ -504,7 +504,7 @@ body:has(button:hover) .cursor { width: 52px; height: 52px; border-color: var(--
   background: rgba(0,0,0,0.96);
   display: flex; align-items: center; justify-content: center;
   opacity: 0; pointer-events: none; transition: opacity 0.3s;
-  padding: 40px;
+  padding: 40px; overflow: hidden;
 }
 .lightbox.open { opacity: 1; pointer-events: all; }
 .lightbox-img { max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: var(--radius); }
@@ -683,19 +683,12 @@ body:has(button:hover) .cursor { width: 52px; height: 52px; border-color: var(--
 
 /* ---- SCROLL & OVERFLOW FIXES ---- */
 html {
-  overflow-x: clip;
-  -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
 }
 
 body {
-  overflow-x: clip;
+  overflow-x: hidden;
   overscroll-behavior-y: none;
-  -webkit-overflow-scrolling: touch;
-}
-
-.hero, .section, .marquee-wrap, .footer, .nav {
-  overflow-x: clip;
 }
 
 .work-grid-sq, .work-grid-pt, .work-grid-tk {
@@ -704,7 +697,7 @@ body {
 
 .work-item, .work-item-pt, .work-item-tk {
   min-width: 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 /* ---- SCROLL FIXES ---- */
@@ -714,13 +707,11 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
-.hero, .section, .marquee-wrap, .footer,
 .work-grid-sq, .work-grid-pt, .work-grid-tk {
-  overflow-x: hidden;
   min-width: 0;
 }
 
 .work-item, .work-item-pt, .work-item-tk {
   min-width: 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
