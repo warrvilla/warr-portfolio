@@ -269,7 +269,7 @@ body:has(button:hover) .cursor { width: 52px; height: 52px; border-color: var(--
 .work-item, .work-item-pt { position: relative; cursor: none; }
 
 .work-img-wrap {
-  position: relative; overflow-x: hidden;
+  position: relative; overflow: hidden;
   border-radius: var(--radius);
   background: var(--bg3);
   border: 1px solid var(--border);
