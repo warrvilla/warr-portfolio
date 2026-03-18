@@ -8,7 +8,7 @@
 /* ---- EMAILJS INIT ---- */
 (function(){
   if (typeof emailjs !== 'undefined') {
-    emailjs.init({ publicKey: "PASTE_YOUR_PUBLIC_KEY_HERE" }); // 👈 Step 4: replace this
+    emailjs.init({ publicKey: "X8QS5f2GeSDeaW6El" }); // 👈 Step 4: replace this
   }
 })();
 
@@ -199,7 +199,7 @@ form && form.addEventListener('submit', async e => {
 
   try {
     if (typeof emailjs !== 'undefined') {
-      await emailjs.send('PASTE_SERVICE_ID_HERE', 'PASTE_TEMPLATE_ID_HERE', templateParams); // 👈 Step 2 & 3: replace these
+      await emailjs.send('service_81jq77j', 'template_y4lxeow', templateParams); // 👈 Step 2 & 3: replace these
       showStatus('Message sent! I\'ll get back to you within 24 hours. 🎉', 'success');
       form.reset();
     } else {
