@@ -681,37 +681,55 @@ body:has(button:hover) .cursor { width: 52px; height: 52px; border-color: var(--
   .stat-divider { display:none; }
 }
 
-/* ---- SCROLL & OVERFLOW FIXES ---- */
-html {
-  scroll-behavior: smooth;
-}
+/* ================================================
+   HORIZONTAL SCROLL FIX — single source of truth
+   ================================================ */
 
-body {
-  overflow-x: hidden;
-  overscroll-behavior-y: none;
-}
-
-.work-grid-sq, .work-grid-pt, .work-grid-tk {
-  min-width: 0;
-}
-
-.work-item, .work-item-pt, .work-item-tk {
-  min-width: 0;
-  overflow-x: hidden;
-}
-
-/* ---- SCROLL FIXES ---- */
+/* Prevent horizontal scroll at root level */
 body {
   overflow-x: hidden;
   overscroll-behavior-y: none;
   -webkit-overflow-scrolling: touch;
 }
 
-.work-grid-sq, .work-grid-pt, .work-grid-tk {
-  min-width: 0;
+/* Marquee is the biggest culprit — clip it */
+.marquee-wrap {
+  overflow: hidden;
+  max-width: 100vw;
 }
 
-.work-item, .work-item-pt, .work-item-tk {
+/* Image wrappers must clip zoom animation */
+.work-img-wrap {
+  overflow: hidden;
+}
+
+/* Grid items must not overflow */
+.work-item,
+.work-item-pt,
+.work-item-tk {
   min-width: 0;
-  overflow-x: hidden;
+  overflow: hidden;
+}
+
+/* Grids must not overflow */
+.work-grid-sq,
+.work-grid-pt,
+.work-grid-tk {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Hero glows can bleed — clip them */
+.hero {
+  overflow: hidden;
+}
+
+/* Services glow */
+.services-section {
+  overflow: hidden;
+}
+
+/* Contact glow */
+.contact-section {
+  overflow: hidden;
 }
