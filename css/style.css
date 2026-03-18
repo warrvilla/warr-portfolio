@@ -1,3 +1,8 @@
+/* ============================================================
+   warr.gg — Portfolio CSS
+   Dark bold aesthetic — matches TikTok carousel branding
+   ============================================================ */
+
 :root {
   --bg: #0A0A0A;
   --bg2: #111111;
@@ -676,24 +681,21 @@ body:has(button:hover) .cursor { width: 52px; height: 52px; border-color: var(--
   .stat-divider { display:none; }
 }
 
-/* ---- PREVENT HORIZONTAL SCROLL ---- */
-html, body {
-  overflow-x: hidden;
-  max-width: 100%;
+/* ---- SCROLL & OVERFLOW FIXES ---- */
+html {
+  overflow-x: clip;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 }
 
-* {
-  max-width: 100%;
+body {
+  overflow-x: clip;
+  overscroll-behavior-y: none;
+  -webkit-overflow-scrolling: touch;
 }
 
-/* ---- PREVENT HORIZONTAL SCROLL ON MOBILE ---- */
-html, body {
-  overflow-x: hidden;
-  max-width: 100%;
-}
-
-.hero, .section, .marquee-wrap, .footer {
-  overflow-x: hidden;
+.hero, .section, .marquee-wrap, .footer, .nav {
+  overflow-x: clip;
 }
 
 .work-grid-sq, .work-grid-pt, .work-grid-tk {
@@ -705,13 +707,20 @@ html, body {
   overflow: hidden;
 }
 
-/* ---- MOBILE SCROLL FIX ---- */
-html {
+/* ---- SCROLL FIXES ---- */
+body {
+  overflow-x: hidden;
+  overscroll-behavior-y: none;
   -webkit-overflow-scrolling: touch;
-  scroll-behavior: smooth;
 }
 
-body {
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior-y: none;
+.hero, .section, .marquee-wrap, .footer,
+.work-grid-sq, .work-grid-pt, .work-grid-tk {
+  overflow-x: hidden;
+  min-width: 0;
+}
+
+.work-item, .work-item-pt, .work-item-tk {
+  min-width: 0;
+  overflow: hidden;
 }
